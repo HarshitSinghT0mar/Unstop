@@ -41,7 +41,7 @@ html{
 body{
   height: 100%;
   font-family: Inter;
-  background: rgba(186, 203, 213, 1);
+  /* background: rgba(186, 203, 213, 1); */
   font-size: var(--fs-primary);
   font-weight: var(--fw-primary);
   line-height: normal;
@@ -56,10 +56,11 @@ body{
   padding: 16px 20px 20px 30px;
   gap: 10px;
   flex-shrink: 0;
-  background-color: var(--clr-bg-secondry);
+  background: var(--clr-bg-secondry);
 }
 
-.nav-container li{
+
+.list-item{
   display: flex;
 width: 90px;
 height: 70px;
@@ -72,15 +73,19 @@ flex-shrink: 0;
 text-align: center;
 }
 
-.nav-container span{
+.list-admin{
+display: flex;
+justify-content: flex-end;
+  gap: 16px;
+  padding: 10px 0px  ;
+}
+
+.admin{
   color: rgba(214, 53, 0, 1);
-  font-family: Inter;
   font-size: 10px;
-  font-style: normal;
-  font-weight: 500;
   border-radius: 22px;
   border: 1px solid var rgba(214, 53, 0, 1);
   background: #FBEBEA;
-  padding: 0 8px;
-  justify-content: center;
+  padding: 0 8px;  
 }
+
