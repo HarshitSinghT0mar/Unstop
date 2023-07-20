@@ -7,7 +7,6 @@
   --clr-icon-nav: rgba(0, 115, 230, 1);     /*defining common properties so that its easier if there is any change*/
 
   --clr-icon-bg-primary:rgba(235, 232, 253, 1);
-
   --clr-bordr-primary:rgba(48, 121, 225, 1);
 
 --clr-bg-white:rgba(255, 255, 255, 1);
@@ -18,9 +17,9 @@
   --fw-bolder:700;
 
   --fs-primary: 18px;
-  --fs-secondry1:12px;
-  --fs-secondry2:14px;
-  --fs-numbers-primary: 20px;
+  --fs-small:12px;
+  --fs-medium:14px;
+  --fs-large: 20px;
 }
 
 *{
@@ -63,7 +62,7 @@ width: 100%;
 .nav-container{
   display: flex;
   color: var(--clr-text-secondry);
-  font-size: var(--fs-secondry1);
+  font-size: var(--fs-small);
   align-items: flex-start;
   padding: 16px 20px 20px 30px;
   gap: 10px;
@@ -116,6 +115,7 @@ justify-content: flex-end;
   gap: 20px;
   border-radius: 12px;
   padding: 0 20px 20px;
+  
 }
 
 .page-nav{
@@ -132,7 +132,7 @@ border-bottom: 1px solid var(--clr-text-50);
 
 .page-nav-link{
   display: flex;
-  font-size: var(--fs-secondry2);
+  font-size: var(--fs-medium);
   color: var(--clr-text-secondry);
   padding: 10px 0;
   text-decoration: none;
@@ -142,5 +142,59 @@ border-bottom: 1px solid var(--clr-text-50);
 }
 
 .overview-section{
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-large);
   gap: 20px;
 }
+.overview-box-1 p{
+  font-size: var(--fs-medium);
+}
+
+.overview-box-1{
+  display: flex;
+ flex: 1;
+  border: 1px solid var(--clr-text-50);
+  border-radius: 12px;
+
+  /* width: 162px; */
+}
+
+.common-box{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 20px;
+
+}
+.common-box:not(:last-child){                /*   this will apply border to all except last child */
+  border-right: 1px solid var(--clr-text-50);
+}
+.inside-box-1{
+  display: flex;
+  gap: 20px;
+  font-weight: var(--fw-bolder);
+  align-items: center;
+}
+.stats-box {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-small);
+  gap: 1px;
+}
+
+.small-number{
+  color: rgba(5, 193, 101, 1);
+  font-size: var(--fs-small);
+}
+
+.stats-box-text{
+  font-size: var(--fs-small);
+  
+}
+
+.stats-box-number{
+  font-size: var(--fs-primary);
+}
+
+ 
