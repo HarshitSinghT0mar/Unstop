@@ -32,6 +32,9 @@ img{
   max-width: 100%;
   display: inline;
 }
+a{
+  text-decoration: none;
+}
 html{
   color-scheme: light;
   height: 100%;
@@ -41,22 +44,20 @@ html{
 
 body{
 height: 100%;
-width: 100vw;
+max-width: 100%;       /* max-width to keep content inside body and avoid horizontal scroll bar*/
   font-family: Inter;
- background: rgba(218, 220, 224, 1); 
+ background: rgba(246, 248, 250, 1);
   font-size: var(--fs-primary);
   font-weight: var(--fw-primary);
   color: var(--clr-text-primary);
   line-height: normal;
-  overflow-x: hidden;
+ 
+  
 }
 
 .app-container{
   display: flex;
   gap: 16px;
-  min-width: 100%;
-
-
 }
 
 
@@ -71,7 +72,6 @@ width: 100vw;
   background: var(--clr-bg-secondry);
   border: 1px solid var(--clr-bg-white);
   height:992px;
-  flex-wrap: wrap;
   flex: 0 1;
 }
 
@@ -132,24 +132,67 @@ width: 100%;
 border-bottom: 1px solid var(--clr-text-50);
 
 }
+.page-nav img:nth-of-type(2){                 /*nth of type img tag*/
+margin-left: auto;
 
-.page-nav-link{
+}
+
+
+
+.page-nav-link-active{
   display: flex;
   font-size: var(--fs-medium);
   color: var(--clr-text-secondry);
   padding: 10px 0;
-  text-decoration: none;
   border-bottom: 3px solid var(--clr-text-secondry);
- height: 100%;
+ height: 100%; 
  align-items: center;
+
 }
+
+.mob-header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+.mob-header img:nth-of-type(1){
+  padding: 7px 16px;
+}
+.mob-nav{
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  width: 100%;
+  padding: 0 15px;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+}
+
+.mob-nav img:nth-of-type(2){                    
+  margin-left: auto;   
+  padding: 10px;             
+}
+
+.mob-page-nav{
+  display: flex;
+ align-items: center;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid var(--clr-text-50);
+  justify-content:space-around;
+  font-size: var(--fs-medium);
+  text-align: center;
+}
+
 
 .overview-section{
   display: flex;
   flex-direction: column;
   font-size: var(--fs-large);
   gap: 20px;
- 
+
 }
 .overview-box-1 p{
   font-size: var(--fs-medium);
@@ -158,11 +201,10 @@ border-bottom: 1px solid var(--clr-text-50);
 
 .overview-box-1{
   display: flex;
- flex: 1 0;
   border: 1px solid var(--clr-text-50);
   border-radius: 12px;
   flex-wrap:wrap;
- 
+  
 }
 
 .common-box{
@@ -171,29 +213,30 @@ border-bottom: 1px solid var(--clr-text-50);
   gap: 16px;
   padding: 16px 20px;
 max-width: 100%;
+}
+.common-box:not(:last-child){                  /*   this will apply border to all except last child */
+  border-right: 1px solid var(--clr-text-50);
 
 }
-.common-box:not(:last-child){                /*   this will apply border to all except last child */
-  border-right: 1px solid var(--clr-text-50);
- 
-}
+
+
 
 @media screen and (max-width: 767px) {
-  .app-container {
-    flex-direction: column;
+  .main-container {
+   padding: 0;
+   min-width: 100%;
   }
-  .common-box{
-    width: 100%;
-  }
+
+.my-assesments{
+  padding: 20px 15px;
+}
   .nav-container{
-    z-index: 999;
+    z-index: 2;
   }
+ 
   .overview-section{display: none;}
- .list-item{
-  flex-direction: row;
-  min-width: 100%;
-  flex: 1;
- } 
+ 
+  
 
  
 }
@@ -204,6 +247,7 @@ max-width: 100%;
   font-weight: var(--fw-bolder);
   align-items: center;
 }
+
 .stats-box {
   display: flex;
   flex-direction: column;
@@ -231,7 +275,7 @@ max-width: 100%;
 }
 .my-assesments p{
   font-size: var(--fs-large);
-  height: 100%;
+  /* height: 100%; */
 }
  
 .assesment-cards{
@@ -252,7 +296,7 @@ max-width: 100%;
   border: 1px dotted var(--clr-text-50);
   justify-content: center;
   align-items: center;
-  background: rgba(218, 220, 224, 1); 
+  background: rgba(246, 248, 250, 1);
   text-align: center;
 
 }
@@ -310,6 +354,11 @@ justify-content: space-between;
 .ques-duration p{
   font-size: var(--fs-small);
 }
+.ques-duration div{
+  display: flex;
+  flex-direction: column;
+  gap: -1px;
+}
 
 .share-user{
   display: flex;
@@ -331,15 +380,15 @@ justify-content: center;
 
 .image-container {
   position: relative;
-  width: 60px; /* Adjust the width as needed */
-  height: 30px; /* Adjust the height as needed */
+  width: 60px; 
+  height: 30px; 
 }
 
 .image-container img {
   position: absolute;
-  width: 50%; /* Half of the container width */
-  height: 100%; /* Full height of the container */
-  object-fit: cover; /* To maintain aspect ratio of the images */
+  width: 50%; 
+  height: 100%; 
+  object-fit: contain; /* To maintain image shape inside the container */
 }
 
 .image-container img:nth-child(1) {

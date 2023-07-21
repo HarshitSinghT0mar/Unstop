@@ -1,35 +1,47 @@
 import React from "react";
-import Total from "./Total";
+import Overview from "./Overview";
 import Stats from "./Stats";
 import MyAssesments from "./MyAssesments";
+import PageNav from "./PageNav";
+import HeaderMob from "./HeaderMob";
+import { useState,useEffect } from "react";
 
 const MainContent = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Function to update windowWidth state
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Add event listener for the resize event
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <main className="main-container">
-      <section className="page-nav">
-        <a href="#" style={{ textDecoration: "none" }}>
-          Assesments
-        </a>
-        {/* using a tag instead of span or p coz in the design it looks like we will be navigating inside the page through so if asked to create function app we can add Link tag with the react-router */}
-        <img src="/assets/Vector 298.svg" alt-text="vector" />
-        <a href="#" className="page-nav-link">
-          My Assesments
-        </a>
-      </section>
+     {screenWidth>767 ? <PageNav />: <HeaderMob />}
       <section className="overview-section">
         <p>Assesments Overview</p>
         <div className="overview-box-1">
-          <Total
+          <Overview
             heading="Total Assesment"
             icon="/assets/agenda.svg"
             number="34"
-          ><span className="stats-box-number">34</span></Total>
-          <Total heading="Total purpose" icon="/assets/people.svg" number="11">
+          >
+            <span className="stats-box-number">34</span>
+          </Overview>
+          <Overview heading="Total purpose" icon="/assets/people.svg" number="11">
             <Stats smalltext="Total Candidate" number="11,145" />
             <img src="/assets/Vector 250.svg" />
             <Stats smalltext="Who Attempted" number="1,114" />
-          </Total>
-          <Total
+          </Overview>
+          <Overview
             heading="Candidates Score"
             icon="/assets/internet.svg"
             number="11,000"
@@ -40,16 +52,14 @@ const MainContent = () => {
             <Stats smalltext="Social Share" number="145" />
             <img src="/assets/Vector 250.svg" />
             <Stats smalltext="Unique Link" number="145" />
-          </Total>
+          </Overview>
 
-          <Total
-            heading="Total purpose"
-            icon="/assets/link_image.svg"
-        
-          ><span className="stats-box-number">11</span></Total>
+          <Overview heading="Total purpose" icon="/assets/link_image.svg">
+            <span className="stats-box-number">11</span>
+          </Overview>
         </div>
       </section>
-      <MyAssesments />
+      <MyAssesments screenWidth={screenWidth}/>
     </main>
   );
 };

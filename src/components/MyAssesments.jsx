@@ -2,7 +2,7 @@ import React from "react";
 import AssesmentDetails from "./AssesmentDetails";
 
 
-const MyAssesments = () => {
+const MyAssesments = (props) => {
   return (
     <section className="my-assesments">
       <p>My Assesment</p>

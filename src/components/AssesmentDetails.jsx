@@ -34,7 +34,7 @@ const AssesmentDetails = (props) => {
         <div className="share-user">
           <div className="share-image">
             <img src="/assets/link.svg" />
-            Share
+            <span>Share</span>
           </div>
          
           {props.bool2 && <img src="/assets/User_LP.svg" alt="user" />}
