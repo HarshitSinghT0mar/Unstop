@@ -39,7 +39,7 @@ const AssesmentDetails = (props) => {
          
           {props.bool2 && <img src="/assets/User_LP.svg" alt="user" />}
           {props.bool && (
-            <div style={{display:"flex",}}>
+            <div className="image-container">
             <img src="/assets/User_LP.svg" alt="user" />
               <img src="/assets/pastl_LP.svg" alt="user" />
               <img src="/assets/pink_LP.svg" alt="user" />

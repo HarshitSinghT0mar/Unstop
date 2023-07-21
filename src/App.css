@@ -195,9 +195,7 @@ max-width: 100%;
   flex: 1;
  } 
 
- .admin{
-
- }
+ 
 }
 
 .inside-box-1{
@@ -331,3 +329,30 @@ gap: 4px;
 justify-content: center;
 }
 
+.image-container {
+  position: relative;
+  width: 60px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+}
+
+.image-container img {
+  position: absolute;
+  width: 50%; /* Half of the container width */
+  height: 100%; /* Full height of the container */
+  object-fit: cover; /* To maintain aspect ratio of the images */
+}
+
+.image-container img:nth-child(1) {
+  left: 0;
+  z-index: 1;
+}
+
+.image-container img:nth-child(2) {
+  left: 25%; /* Half of the container width - overlapping by 25% */
+  z-index: 2;
+}
+
+.image-container img:nth-child(3) {
+  left: 50%; /* Overlapping by 50% */
+  z-index: 3;
+}
