@@ -16,8 +16,10 @@ const MyAssesments = () => {
             subjective (text or paragraph)!
           </p>
         </div>
-       <AssesmentDetails />
-      <AssesmentDetails />
+       <AssesmentDetails bool2={true} bool={false}/>
+      <AssesmentDetails userImg="/assets/multi_user.svg" bool={true} bool2={false}/>
+       
+    
         
       </div>
       <div></div>
