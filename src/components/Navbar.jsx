@@ -5,15 +5,15 @@ const Navbar = () => {
   const { showNav, setShowNav } = useContext(FormContext);
   return (
     <nav className="nav-container">
-      <ul style={{ textAlign: "center",width:"100%"}}>
-        {showNav && (
+      <ul style={{ textAlign:"center",width:"100%"}}>
+        {showNav && (                 //if showNav is true,which will we when we click segment image then only render this section
           <>
-            <div className="list-item">
+            <div className="list-item">  
               <span>Menu</span>
               <img
                 alt="cross"
                 src="/assets/cut.svg"
-                onClick={() => {
+                onClick={() => {  //here as soon as it is clicked showNav is set to opposite what it previously was
                   setShowNav(!showNav);
                 }}
                 style={{marginLeft:"auto"}}
@@ -26,8 +26,8 @@ const Navbar = () => {
           Dashboard
         </li>
         <li className="list-item list-item-selected">
-          <img alt="icon" src="/assets/note_alt.svg" />
-          Assesment
+          <img alt="icon" src="/assets/note_alt.svg" />  
+          Assesment           
         </li>
         <li className="list-item">
           <img alt="icon" src="/assets/quiz.svg" />
@@ -35,8 +35,7 @@ const Navbar = () => {
         </li>
           <img alt="icon" src="assets/Vector 267.svg" style={{width:"100%",margin:"10px 0"}} />
        
-        
-        <li className="list-item list-admin">
+        <li className="list-item list-admin">    
           <span className="admin">Admin</span>
           <img alt="icon" src="/assets/admin_meds.svg" />
           Round Status

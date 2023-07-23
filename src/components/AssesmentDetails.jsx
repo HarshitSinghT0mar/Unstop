@@ -18,7 +18,7 @@ const AssesmentDetails = (props) => {
           <img alt="vector" src="/assets/Vector 333.svg" />
           {screenWidth > 767 ? (
             <img alt="calender" src="/assets/calendar_today.svg" />
-          ) : (
+          ) : (           //different images of calender were used srendering different images conditionally here
             <img alt="time" src="assets/schedule.svg" />
           )}
 
@@ -43,12 +43,15 @@ const AssesmentDetails = (props) => {
             <span>Share</span>
           </div>
 
-          {props.bool ? (
+          {props.bool ? (  //using bool prop to conditionally rendet the images of users accounts
+            <>
             <div className="image-container">
               <img src="/assets/User_LP.svg" alt="user" />
               <img src="/assets/pastl_LP.svg" alt="user" />
               <img src="/assets/pink_LP.svg" alt="user" />
+            
             </div>
+           {screenWidth<767 && <span>+324</span>}</>
           ) : (
             <img src="assets/User_LP.svg" />
           )}

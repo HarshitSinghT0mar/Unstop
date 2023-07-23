@@ -3,7 +3,8 @@ import AssesmentDetails from "./AssesmentDetails";
 import FormContext from "../Contexts/FormContext";
 
 const MyAssesments = (props) => {
-  const { screenWidth, setShowChart, showChart ,setShowForm,showForm} = useContext(FormContext);
+  const { screenWidth, setShowChart, showChart, setShowForm, showForm } =
+    useContext(FormContext);
 
   const showBarChart = () => {
     return setShowChart(!showChart);
@@ -14,6 +15,8 @@ const MyAssesments = (props) => {
         <span>My Assesment</span>
         {screenWidth < 767 && (
           <div className="my-assesment-img-container">
+            {" "}
+            {/*all these icons will render on smaller screen*/}
             <img alt="icon" src="assets/search.svg" />
             <img alt="icon" src="assets/filter_list_alt.svg" />
             <img alt="icon" src="assets/bar_chart.svg" onClick={showBarChart} />
@@ -22,12 +25,15 @@ const MyAssesments = (props) => {
       </div>
 
       <div className="assesment-cards">
-        <div className="new-assesment" id="form" onClick={()=>{
-          setShowForm(!showForm)
-        }}>
+        <div
+          className="new-assesment"
+          id="form"
+          onClick={() => {
+            setShowForm(!showForm);
+          }}
+        >
           <img alt="icon" src="/assets/add.svg" />
           <span>New Assesment</span>
-
           <p>
             From here you can add questions of multiple types like MCQs,
             subjective (text or paragraph)!
@@ -37,7 +43,7 @@ const MyAssesments = (props) => {
           bool={false}
           subject="Maths"
           hrs="00"
-          noOfQues="00"
+          noOfQues="00" //rendering two common components manually here but we could have used mapping as well if we had more cards to render by simply creating a array of objects with these keys and we can also dymalically add data to the array from form details and render them dynamalically here using map
           date="20 Apr 2023"
           purpose="Job"
         />
@@ -49,6 +55,26 @@ const MyAssesments = (props) => {
           date="20 Apr 2023"
           purpose="Job"
         />
+        {screenWidth < 767 && (
+          <>
+            <AssesmentDetails
+              bool={true}
+              subject="Maths"
+              hrs="00"
+              noOfQues="00"
+              date="20 Apr 2023"
+              purpose="Job"
+            />
+            <AssesmentDetails
+              bool={true}
+              subject="Maths"
+              hrs="00"
+              noOfQues="00"
+              date="20 Apr 2023"
+              purpose="Job"
+            />
+          </>
+        )}
       </div>
     </section>
   );

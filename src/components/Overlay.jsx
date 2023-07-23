@@ -1,15 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Overlay = () => {
-  const handleOverlayClick = (event) => {
-    event.stopPropagation(); // Prevent click event from bubbling up
-  };
-  
-  return (
-    <div className='overlay-box' onClick={handleOverlayClick}>
-      
-    </div>
-  )
-}
+  return <div className="overlay-box"></div>;
+};
 
-export default Overlay
+export default Overlay;   //this component is used to render behind form and over the content of the app to look visually better

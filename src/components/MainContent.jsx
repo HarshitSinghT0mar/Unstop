@@ -4,25 +4,24 @@ import Stats from "./Stats";
 import MyAssesments from "./MyAssesments";
 import PageNav from "./PageNav";
 import HeaderMob from "./HeaderMob";
-
-import FormContext from "../Contexts/FormContext";
+import FormContext from "../Contexts/FormContext";   //FormCOntext is the context created to levarage context api
 
 const MainContent = () => {
-  const { screenWidth, setScreenWidth, showChart } = useContext(FormContext);
+  const { screenWidth, showChart } = useContext(FormContext);  //accessing variable of other components using useContext hook.
 
   return (
     <main className="main-content-container">
       {screenWidth > 767 ? (
-        <PageNav setScreenWidth={setScreenWidth} />
+        <PageNav  />   //rendering different headers for mobile and desktop 
       ) : (
-        <HeaderMob setScreenWidth={setScreenWidth} />
+        <HeaderMob />
       )}
       <div className="main-content">
         {(showChart || screenWidth > 767) && (
-          <section className="overview-section">
+          <section className="overview-section">    
             <p>Assesments Overview</p>
             <div className="overview-box">
-            <Overview
+            <Overview                     //rendering overview section here and providing props so that we don't have to change Overview component everytime for different texts , we can just accept props and pass the changes as props from here
               heading="Total Assesment"
               icon="/assets/agenda.svg"
               number="34"
@@ -56,8 +55,8 @@ const MainContent = () => {
             </Overview>
             </div>
           </section>
-        )}
-        <MyAssesments screenWidth={screenWidth} />
+        )}                
+        <MyAssesments />      
       </div>
     </main>
   );

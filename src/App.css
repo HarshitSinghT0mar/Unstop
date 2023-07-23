@@ -7,12 +7,8 @@
   --clr-light-grey: rgba(141, 164, 191, 1);
 
   --clr-icon-primary: rgba(101, 72, 238, 1);
-  --clr-icon-nav: rgba(
-    0,
-    115,
-    230,
-    1
-  ); /*defining common properties so that its easier if there is any change*/
+  --clr-icon-nav: rgba(0, 115, 230, 1);
+  /*defining common properties so that its easier if there is any change*/
 
   --clr-icon-bg-primary: rgba(235, 232, 253, 1);
   --clr-bordr-primary: rgba(48, 121, 225, 1);
@@ -43,7 +39,7 @@ img {
   cursor: pointer;
 }
 a {
-  text-decoration: none;
+  text-decoration: none; /*to remove all the underlines in a tags*/
 }
 html {
   color-scheme: light;
@@ -59,6 +55,10 @@ body {
   font-weight: var(--fw-primary);
   color: var(--clr-text-primary);
   line-height: normal;
+}
+
+.small-screen {
+  max-width: 600px;
 }
 
 .app-container {
@@ -102,8 +102,8 @@ body {
 
 .list-admin {
   display: flex;
- flex-direction: column;
- gap: 16px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .admin {
@@ -127,12 +127,12 @@ body {
 .main-content {
   display: flex;
   flex-direction: column;
-  gap:26px;
+  gap: 26px;
   width: 100%;
   height: 100vh;
   gap: 20px;
   flex: 1 0;
-  position: relative;
+  position: relative; /*to position its children relative to the position of main-content container*/
   padding: 20px 20px;
 }
 
@@ -174,7 +174,6 @@ body {
 }
 .mob-nav {
   display: flex;
-  /* justify-content: flex-start; */
   align-items: center;
   width: 100%;
   padding: 0 15px;
@@ -204,7 +203,6 @@ body {
   flex-direction: column;
   font-size: var(--fs-large);
   gap: 20px;
-
 }
 .overview-box p {
   font-size: var(--fs-medium);
@@ -212,7 +210,7 @@ body {
 
 .overview-box {
   display: flex;
- 
+
   border-radius: 12px;
   flex-wrap: wrap;
 }
@@ -225,108 +223,12 @@ body {
   max-width: 100%;
   flex: 1 1 auto;
   border: 1px solid var(--clr-system-stroke);
-  
 }
 .common-box:first-child {
-  border-radius:12px 0 0 12px ;
+  border-radius: 12px 0 0 12px;
 }
 .common-box:last-child {
-  border-radius:0 12px 12px 0 ;
-}
-
-@media screen and (max-width: 767px) {
-  .nav-container {
-    z-index: 6;
-    padding: 40px 20px 10px 20px;
-    gap: 6px;
-    min-height: 100vh;
-    min-width: 315px;
-   font-size: var(--fs-medium);
-    background: rgba(242, 248, 254, 1);
-  }
-  .list-admin{
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .admin{
-    margin-left: auto;
-  }
-  .list-admin span{
-    order: 2;
-  }
-  .list-admin li{
-    order: 1;
-  }
-  
-  .main-content-container{
- position: absolute;
- width: 100%;
-  }
-  .slid-in{
-    height: 100%;
-  }
-
-  .list-item{
-    min-width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-  }
-
-
-  .my-assesment-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-  }
-
-  .my-assesment-img-container{
-    display: flex;
-    gap: 4px;
-  }
-  .my-assesment-img-container img{
-    padding: 4px;
-    border-radius: 50px;
-  }
-
-  .common-box{
-    max-width: 100%;
-  }
-
-  .overview-box .common-box:first-child{
-    order:1;
-  }
-  .overview-box .common-box:last-child{
-    order:2;
-  }
-  .overview-box .common-box:nth-child(2){
-    order:3;
-  }
-  .overview-box .common-box:nth-child(3){
-    order:4;
-    border-radius: 0 0 12px 12px;
-  }
-  
-
-  .form{
-    position: absolute;
-    left: 0 !important;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    top: 0;
-    min-width: 100%;
-    height: auto;
-    
-  }
-  
-  
+  border-radius: 0 12px 12px 0;
 }
 
 .inside-box {
@@ -360,10 +262,9 @@ body {
   flex-direction: column;
   gap: 16px;
 }
-.my-assesment-header{
+.my-assesment-header {
   font-size: var(--fs-large);
 }
-
 
 .assesment-cards {
   display: flex;
@@ -480,15 +381,12 @@ body {
 
 .image-container img:nth-child(1) {
   left: 0;
-  z-index: 1;
+  z-index: 1; /*z-index is used to make the content apprear above the 2-d screen*/
 }
 
 .image-container img:nth-child(2) {
   left: 25%; /* Half of the container width - overlapping by 25% */
-  z-index: 2
-  
-  
-  ;
+  z-index: 2;
 }
 
 .image-container img:nth-child(3) {
@@ -507,11 +405,9 @@ body {
 .form {
   z-index: 6;
   background: var(--clr-bg-white);
-  position: fixed;
-  width: 50%;
-  left: 25%;
-  right: 25%;
-
+  position: absolute;
+  width: 44%;
+  left: 28%;
   border-radius: 8px;
 }
 
@@ -522,13 +418,8 @@ body {
   gap: 20px;
   padding: 20px 30px;
 }
-.form-section {
-  gap: 10px;
-}
 
-.hide-form-card {
-  top: -100%;
-}
+
 
 .form-header {
   display: flex;
@@ -548,9 +439,9 @@ body {
   width: 100%;
   font-size: var(--fs-medium2-16);
   font-size: 16px;
-  color: var(--clr-form-text);
   font-weight: 600;
   flex-wrap: wrap;
+
 }
 .label-section {
   font-size: var(--fs-medium2-16);
@@ -606,4 +497,136 @@ body {
   z-index: 4;
   width: 100%;
   height: 100%;
+}
+
+.slide-up-enter {
+  transform: translateY(100%);  /*will move upwards 100%*/
+}
+
+.slide-up-enter-active {
+  /*transition applied to form*/
+  transform: translateY(0);
+  transition: transform 300ms ease;
+}
+
+.slide-up-exit {
+  transform: translateY(0);
+}
+
+.slide-up-exit-active {
+  transform: translateY(100%);
+  transition: transform 300ms ease;
+}
+
+.fade-in-enter {
+  opacity: 0;
+}
+.fade-in-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.fade-in-exit {
+  opacity: 1;
+}
+
+.fade-in-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+/*media queries are used to modify the style for smaller screens*/
+
+@media screen and (max-width: 767px) {
+  .nav-container {
+    z-index: 5;
+    padding: 40px 20px 10px 20px;
+    gap: 6px;
+    min-height: 100vh;
+    min-width: 315px;
+    font-size: var(--fs-medium);
+    background: rgba(242, 248, 254, 1);
+  }
+  .list-admin {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .admin {
+    margin-left: auto;
+  }
+  .list-admin span {
+    order: 2;
+  }
+  .list-admin li {
+    order: 1;
+  }
+
+  .main-content-container {
+    position: absolute;
+    width: 100%;
+  }
+  .slid-in {
+    height: 100%;
+  }
+
+  .list-item {
+    min-width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .my-assesment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .my-assesment-img-container {
+    display: flex;
+    gap: 4px;
+  }
+  .my-assesment-img-container img {
+    padding: 4px;
+    border-radius: 50px;
+  }
+
+  .common-box {
+    max-width: 100%;
+  }
+
+  .overview-box .common-box:first-child {
+    order: 1;
+  } /*setting order of the children of overview-box as their order on the screen is different on smaller screens*/
+  .overview-box .common-box:last-child {
+    order: 2;
+  }
+  .overview-box .common-box:nth-child(2) {
+    order: 3;
+  }
+  .overview-box .common-box:nth-child(3) {
+    order: 4;
+    border-radius: 0 0 12px 12px;
+  }
+.subject-assesment{
+  font-size: var(--fs-medium);
+  width: 100%;
+}
+  .form {
+    position: absolute;
+    left: 0 !important;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    top: 0;
+    min-width: 100%;
+    height: 100vh;
+    z-index: 6;
+    background: var(--clr-bg-white);
+  }
 }
