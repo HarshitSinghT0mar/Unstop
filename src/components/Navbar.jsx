@@ -12,7 +12,7 @@ const Navbar = () => {
               <span>Menu</span>
               <img
                 alt="cross"
-                src="/assets/cut.svg"
+                src="./assets/cut.svg"
                 onClick={() => {  //here as soon as it is clicked showNav is set to opposite what it previously was
                   setShowNav(!showNav);
                 }}
@@ -22,22 +22,22 @@ const Navbar = () => {
           </>
         )}
         <li className="list-item">
-          <img alt="icon" src="/assets/dashboard.svg" />
+          <img alt="icon" src="./assets/dashboard.svg" />
           Dashboard
         </li>
         <li className="list-item list-item-selected">
-          <img alt="icon" src="/assets/note_alt.svg" />  
+          <img alt="icon" src="./assets/note_alt.svg" />  
           Assesment           
         </li>
         <li className="list-item">
-          <img alt="icon" src="/assets/quiz.svg" />
+          <img alt="icon" src="./assets/quiz.svg" />
           My Library
         </li>
           <img alt="icon" src="assets/Vector 267.svg" style={{width:"100%",margin:"10px 0"}} />
        
         <li className="list-item list-admin">    
           <span className="admin">Admin</span>
-          <img alt="icon" src="/assets/admin_meds.svg" />
+          <img alt="icon" src="./assets/admin_meds.svg" />
           Round Status
         </li>
       </ul>

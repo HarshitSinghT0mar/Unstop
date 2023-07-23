@@ -14,12 +14,12 @@ const showNavMob=()=>{
   return (
     <div className="mob-header">
       <div>
-        <img alt="statusBar" src="/assets/Status Bar.svg" />
+        <img alt="statusBar" src="./assets/Status Bar.svg" />
       </div>
       <div className="mob-nav">
-        <img src="/assets/segment.svg" onClick={showNavMob}/>
+        <img src="./assets/segment.svg" onClick={showNavMob}/>
         <span>Assesment</span>
-        <img alt="laptopIcon" src="/assets/laptop_mac.svg" id="laptop-screen" />
+        <img alt="laptopIcon" src="./assets/laptop_mac.svg" id="laptop-screen" />
       </div>
       <div className="mob-page-nav">
         <a href="#" className="page-nav-link-active">

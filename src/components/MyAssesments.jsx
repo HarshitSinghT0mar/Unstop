@@ -32,7 +32,7 @@ const MyAssesments = (props) => {
             setShowForm(!showForm);
           }}
         >
-          <img alt="icon" src="/assets/add.svg" />
+          <img alt="icon" src="./assets/add.svg" />
           <span>New Assesment</span>
           <p>
             From here you can add questions of multiple types like MCQs,
