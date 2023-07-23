@@ -7,7 +7,7 @@ const MyAssesments = (props) => {
     useContext(FormContext);
 
   const showBarChart = () => {
-    return setShowChart(!showChart);
+    return setShowChart(!showChart);   /*will show and close bar char*/
   };
   return (
     <section className="my-assesments">

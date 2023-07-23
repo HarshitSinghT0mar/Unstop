@@ -617,6 +617,8 @@ body {
   font-size: var(--fs-medium);
   width: 100%;
 }
+
+
   .form {
     position: absolute;
     left: 0 !important;
