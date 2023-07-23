@@ -1,10 +1,26 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import FormContext from "../Contexts/FormContext";
 
 const Navbar = () => {
+  const { showNav, setShowNav } = useContext(FormContext);
   return (
     <nav className="nav-container">
       <ul style={{ textAlign: "center" }}>
+        {showNav && (
+          <>
+            <div className="list-item">
+              <span>Menu</span>
+              <img
+                alt="cross"
+                src="/assets/cut.svg"
+                onClick={() => {
+                  setShowNav(!showNav);
+                }}
+                style={{marginLeft:"auto"}}
+              />
+            </div>
+          </>
+        )}
         <li className="list-item">
           <img alt="icon" src="/assets/dashboard.svg" />
           Dashboard
@@ -27,7 +43,6 @@ const Navbar = () => {
         </li>
       </ul>
     </nav>
-    
   );
 };
 

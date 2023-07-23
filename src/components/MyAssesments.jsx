@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import AssesmentDetails from "./AssesmentDetails";
-
+import FormContext from "../Contexts/FormContext";
 
 const MyAssesments = (props) => {
+  const form = document.getElementById("form");
+  const { setShowForm, showForm } = useContext(FormContext);
+
+  const addAssesment = () => {
+    // form.classList.toggle("form-card");
+    return setShowForm(!showForm);
+  };
   return (
     <section className="my-assesments">
       <p>My Assesment</p>
       <div className="assesment-cards">
-        <div className="new-assesment">
+        <div className="new-assesment" id="form" onClick={addAssesment}>
           <img alt="icon" src="/assets/add.svg" />
           <span>New Assesment</span>
 
@@ -16,13 +23,23 @@ const MyAssesments = (props) => {
             subjective (text or paragraph)!
           </p>
         </div>
-       <AssesmentDetails bool2={true} bool={false}/>
-      <AssesmentDetails userImg="/assets/multi_user.svg" bool={true} bool2={false}/>
-       
-    
-        
+        <AssesmentDetails
+          bool={false}
+          subject="Maths"
+          hrs="00"
+          noOfQues="00"
+          date="20 Apr 2023"
+          purpose="Job"
+        />
+        <AssesmentDetails
+          bool={true}
+          subject="Maths"
+          hrs="00"
+          noOfQues="00"
+          date="20 Apr 2023"
+          purpose="Job"
+        />
       </div>
-      <div></div>
     </section>
   );
 };

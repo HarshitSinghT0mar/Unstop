@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Overview from "./Overview";
 import Stats from "./Stats";
 import MyAssesments from "./MyAssesments";
 import PageNav from "./PageNav";
 import HeaderMob from "./HeaderMob";
 import { useState,useEffect } from "react";
+import FormContext from "../Contexts/FormContext";
+
 
 const MainContent = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const {screenWidth,setScreenWidth}=useContext(FormContext)
 
   useEffect(() => {
     // Function to update windowWidth state
@@ -23,9 +25,9 @@ const MainContent = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  return (
-    <main className="main-container">
-     {screenWidth>767 ? <PageNav />: <HeaderMob />}
+  return (<main className="main-content-container">
+     {screenWidth>767 ? <PageNav setScreenWidth={setScreenWidth}/>: <HeaderMob setScreenWidth={setScreenWidth}/>}
+    <div className="main-content">
       <section className="overview-section">
         <p>Assesments Overview</p>
         <div className="overview-box-1">
@@ -60,6 +62,9 @@ const MainContent = () => {
         </div>
       </section>
       <MyAssesments screenWidth={screenWidth}/>
+
+      
+    </div>
     </main>
   );
 };

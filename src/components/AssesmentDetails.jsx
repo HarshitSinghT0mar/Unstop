@@ -2,32 +2,32 @@ import React from "react";
 
 const AssesmentDetails = (props) => {
   return (
-    <div className="maths-assesment">
-      <div className="maths-box-1">
+    <div className="subject-assesment">
+      <div className="subject-box-1">
         <img alt="icon" src="/assets/briefcase_image.svg" />
-        <span>Maths Assesment</span>
+        <span>{props.subject} Assesment</span>
         <img
           style={{ position: "absolute", right: "16px", top: "16px" }}
           src="/assets/3 dot.svg"
         />
-        {/*have already set maths-assesment postion to relative*/}
-        <div className="maths-calendar">
-          <span>Job</span>
+        {/*have already set subject-assesment postion to relative*/}
+        <div className="subject-calendar">
+          <span>{props.purpose}</span>
           <img alt="vector" src="/assets/Vector 333.svg" />
           <img alt="calender" src="/assets/calendar_today.svg" />
 
-          <time>20 Apr 2023</time>
+          <time>{props.date}</time>
         </div>
       </div>
       <img src="/assets/Vector 332.svg" alt="vector" />
-      <div className="maths-footer">
+      <div className="subject-footer">
         <div className="ques-duration">
           <div>
-            <p>00</p>
+            <p>{props.hrs}</p>
             <p>Duration</p>
           </div>
           <div>
-            <p>00</p>
+            <p>{props.noOfQues}</p>
             <p>Questions</p>
           </div>
         </div>
@@ -36,20 +36,19 @@ const AssesmentDetails = (props) => {
             <img src="/assets/link.svg" />
             <span>Share</span>
           </div>
-         
-          {props.bool2 && <img src="/assets/User_LP.svg" alt="user" />}
-          {props.bool && (
+
+          {props.bool ? (
             <div className="image-container">
-            <img src="/assets/User_LP.svg" alt="user" />
+              <img src="/assets/User_LP.svg" alt="user" />
               <img src="/assets/pastl_LP.svg" alt="user" />
               <img src="/assets/pink_LP.svg" alt="user" />
             </div>
-
+          ) : (
+            <img src="assets/User_LP.svg" />
           )}
-          </div>
         </div>
       </div>
-
+    </div>
   );
 };
 

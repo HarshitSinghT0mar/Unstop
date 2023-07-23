@@ -1,7 +1,11 @@
 import React from 'react'
 
-const PageNav = () => {
-  return (<>
+const PageNav = (props) => {
+  const showSmallScreen=()=>{
+    return props.setScreenWidth(766)
+  }
+  
+  return (
     <section className="page-nav">
         <a href="#">
           Assesments
@@ -11,9 +15,9 @@ const PageNav = () => {
         <a href="#" className="page-nav-link-active">
           My Assesments
         </a>
-      <img src='assets/mobile_screen_share.svg'/>
+      <img src='assets/mobile_screen_share.svg' id="mobile-screen" onClick={showSmallScreen}/>
       </section>
-      </>
+      
   )
 }
 
