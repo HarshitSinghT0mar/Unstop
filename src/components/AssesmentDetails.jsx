@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import FormContext from "../Contexts/FormContext";
 
 const AssesmentDetails = (props) => {
+  const { screenWidth } = useContext(FormContext);
   return (
     <div className="subject-assesment">
       <div className="subject-box-1">
@@ -14,7 +16,11 @@ const AssesmentDetails = (props) => {
         <div className="subject-calendar">
           <span>{props.purpose}</span>
           <img alt="vector" src="/assets/Vector 333.svg" />
-          <img alt="calender" src="/assets/calendar_today.svg" />
+          {screenWidth > 767 ? (
+            <img alt="calender" src="/assets/calendar_today.svg" />
+          ) : (
+            <img alt="time" src="assets/schedule.svg" />
+          )}
 
           <time>{props.date}</time>
         </div>

@@ -50,7 +50,7 @@ const AssessmentForm = () => {
             onChange={(e) => setPurpose(e.target.value)}
             className="input-section"
           >
-            <option value="" style={{ color: "" }}>
+            <option value="" style={{ color: "rgba(141, 164, 191, 1)"}}>
               Select Purpose
             </option>
             <option value="Purpose 1">Purpose 1</option>
@@ -65,7 +65,9 @@ const AssessmentForm = () => {
             onChange={(e) => setDescription(e.target.value)}
             className="input-section"
           >
-            <option value="">Select Description</option>
+            <option value="" style={{ color: "rgba(141, 164, 191, 1)" }}>
+              Select Description
+            </option>
             <option value="Description 1">Description 1</option>
             <option value="Description 2">Description 2</option>
             <option value="Description 3">Description 3</option>

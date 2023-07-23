@@ -5,7 +5,7 @@ const Navbar = () => {
   const { showNav, setShowNav } = useContext(FormContext);
   return (
     <nav className="nav-container">
-      <ul style={{ textAlign: "center" }}>
+      <ul style={{ textAlign: "center",width:"100%"}}>
         {showNav && (
           <>
             <div className="list-item">

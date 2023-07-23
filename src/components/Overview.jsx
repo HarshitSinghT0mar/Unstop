@@ -1,16 +1,16 @@
 import React from "react";
-const Total = (props) => {
+
+const Overview = (props) => {
   return (
     <div className="common-box">
       <p>{props.heading}</p>
-      <div className="inside-box-1">
+      <div className="inside-box">
         <img alt="icon" src={props.icon} className="icon-images" />
-
         {props.children}
-        {/* Stats component will be accessed here as it is wrapped inside Total component in MainContent   */}
+        {/* Stats component will be accessed here as it is wrapped inside overview component in MainContent   */}
       </div>
     </div>
   );
 };
 
-export default Total;
+export default Overview;

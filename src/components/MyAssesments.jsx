@@ -3,18 +3,28 @@ import AssesmentDetails from "./AssesmentDetails";
 import FormContext from "../Contexts/FormContext";
 
 const MyAssesments = (props) => {
-  const form = document.getElementById("form");
-  const { setShowForm, showForm } = useContext(FormContext);
+  const { screenWidth, setShowChart, showChart ,setShowForm,showForm} = useContext(FormContext);
 
-  const addAssesment = () => {
-    // form.classList.toggle("form-card");
-    return setShowForm(!showForm);
+  const showBarChart = () => {
+    return setShowChart(!showChart);
   };
   return (
     <section className="my-assesments">
-      <p>My Assesment</p>
+      <div className="my-assesment-header">
+        <span>My Assesment</span>
+        {screenWidth < 767 && (
+          <div className="my-assesment-img-container">
+            <img alt="icon" src="assets/search.svg" />
+            <img alt="icon" src="assets/filter_list_alt.svg" />
+            <img alt="icon" src="assets/bar_chart.svg" onClick={showBarChart} />
+          </div>
+        )}
+      </div>
+
       <div className="assesment-cards">
-        <div className="new-assesment" id="form" onClick={addAssesment}>
+        <div className="new-assesment" id="form" onClick={()=>{
+          setShowForm(!showForm)
+        }}>
           <img alt="icon" src="/assets/add.svg" />
           <span>New Assesment</span>
 
