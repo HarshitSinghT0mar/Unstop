@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import MainContent from "./components/MainContent";
 import AssessmentForm from "./components/AssesmentForm";
 import Overlay from "./components/Overlay";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import FormContext from "./Contexts/FormContext";
 
 function App() {
@@ -27,6 +27,29 @@ function App() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+
+  const formRef = useRef(null); // Create a ref for the form component
+
+  useEffect(() => {
+    const handleClickOutsideForm = (event) => {
+      // Check if the clicked element is outside the form
+      if (formRef.current && !formRef.current.contains(event.target)) {
+       console.log(formRef);
+        setShowForm(!showForm); // Close the form if clicked outside
+      }
+    };
+
+    // Attach the event listener to the document
+    document.addEventListener('click', handleClickOutsideForm);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleClickOutsideForm);
+    };
+  }, []);
+
+ 
 
   return (
     <FormContext.Provider
@@ -52,7 +75,7 @@ function App() {
 
         {showForm && (
           <>
-            <AssessmentForm />
+            <AssessmentForm ref={formRef} />
             <Overlay />
           </>
         )}

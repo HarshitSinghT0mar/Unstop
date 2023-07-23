@@ -33,11 +33,11 @@ const Navbar = () => {
           <img alt="icon" src="/assets/quiz.svg" />
           My Library
         </li>
+          <img alt="icon" src="assets/Vector 267.svg" style={{width:"100%",margin:"10px 0"}} />
+       
+        
         <li className="list-item list-admin">
-          <img alt="icon" src="assets/Vector 267.svg" />
           <span className="admin">Admin</span>
-        </li>
-        <li className="list-item">
           <img alt="icon" src="/assets/admin_meds.svg" />
           Round Status
         </li>

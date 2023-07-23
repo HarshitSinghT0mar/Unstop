@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import FormContext from "../Contexts/FormContext";
 
-const AssessmentForm = () => {
+const AssessmentForm = React.forwardRef((props,ref) => {
   const [name, setName] = useState("");
   const [purpose, setPurpose] = useState("");
   const [description, setDescription] = useState("");
@@ -11,7 +11,8 @@ const AssessmentForm = () => {
 
   const { showForm, setShowForm } = useContext(FormContext);
 
-  const skills = ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5"];
+ 
+  
 
   const handleAddSkill = (skill) => {
     setSelectedSkills([...selectedSkills, skill]);
@@ -23,11 +24,12 @@ const AssessmentForm = () => {
     );
   };
   const closeForm = () => {
+ 
     return setShowForm(!showForm);
   };
 
   return (
-    <div className="form">
+    <div className="form" ref={ref}>
       <div className="form-header">
         <span>Create New Assessment</span>
         <CloseIcon onClick={closeForm} style={{ cursor: "pointer" }} />
@@ -109,6 +111,6 @@ const AssessmentForm = () => {
       </div>
     </div>
   );
-};
+});
 
 export default AssessmentForm;

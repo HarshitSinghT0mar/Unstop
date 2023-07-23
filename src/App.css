@@ -47,11 +47,11 @@ a {
 }
 html {
   color-scheme: light;
-  height: 100vh;
+  height: 100%;
 }
 
 body {
-  min-height: 100%;
+  height: 100%;
   max-width: 100%; /* max-width to keep content inside body and avoid horizontal scroll bar*/
   font-family: Inter;
   background: rgba(246, 248, 250, 1);
@@ -65,7 +65,7 @@ body {
   display: flex;
   gap: 16px;
   min-width: 100%;
-  min-height: 100%;
+  height: auto;
   position: relative;
 }
 
@@ -102,9 +102,8 @@ body {
 
 .list-admin {
   display: flex;
-  justify-content: flex-end;
-  gap: 16px;
-  padding: 10px 0px;
+ flex-direction: column;
+ gap: 16px;
 }
 
 .admin {
@@ -123,6 +122,7 @@ body {
   border-radius: 12px;
   flex: 1 0;
   color: var(--clr-text-primary);
+  height: auto;
 }
 .main-content {
   display: flex;
@@ -239,37 +239,45 @@ body {
     z-index: 6;
     padding: 40px 20px 10px 20px;
     gap: 6px;
+    min-height: 100vh;
     min-width: 315px;
-   
+   font-size: var(--fs-medium);
     background: rgba(242, 248, 254, 1);
+  }
+  .list-admin{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .admin{
+    margin-left: auto;
+  }
+  .list-admin span{
+    order: 2;
+  }
+  .list-admin li{
+    order: 1;
   }
   
   .main-content-container{
- position: fixed;
+ position: absolute;
+ width: 100%;
+  }
+  .slid-in{
+    height: 100%;
   }
 
   .list-item{
     min-width: 100%;
     padding: 10px;
     border-radius: 8px;
-  }
-/* 
-  .list-item {
-    border-radius: 8px;
-    width: 100%;
-    height: 50px;
-    align-self: stretch;
-    gap: 10px;
-    flex-direction: row;
+    display:flex;
+    justify-content: flex-start;
     align-items: center;
-    align-self: stretch;
-    height: 50px;
-    padding: 10px;
-    font-size: var(--fs-medium);
-  } */
-  .main-content-container{
-    min-width: 100%;
+    flex-direction: row;
   }
+
 
   .my-assesment-header{
     display: flex;
@@ -304,12 +312,18 @@ body {
     order:4;
     border-radius: 0 0 12px 12px;
   }
+  
 
   .form{
-    left: 0;
+    position: absolute;
+    left: 0 !important;
     right: 0;
+    top: 0;
+    bottom: 0;
+    top: 0;
     min-width: 100%;
-    min-height: 100%;
+    height: auto;
+    
   }
   
   
@@ -493,7 +507,7 @@ body {
 .form {
   z-index: 6;
   background: var(--clr-bg-white);
-  position: absolute;
+  position: fixed;
   width: 50%;
   left: 25%;
   right: 25%;
@@ -589,7 +603,7 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 5;
+  z-index: 4;
   width: 100%;
   height: 100%;
 }
