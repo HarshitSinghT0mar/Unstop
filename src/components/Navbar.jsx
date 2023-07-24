@@ -22,22 +22,22 @@ const Navbar = () => {
           </>
         )}
         <li className="list-item">
-          <img alt="icon" src="./assets/dashboard.svg" />
+          <img loading="lazy" alt="icon" src="./assets/dashboard.svg" />
           Dashboard
         </li>
         <li className="list-item list-item-selected">
-          <img alt="icon" src="./assets/note_alt.svg" />  
+          <img loading="lazy" alt="icon" src="./assets/note_alt.svg" />  
           Assesment           
         </li>
         <li className="list-item">
-          <img alt="icon" src="./assets/quiz.svg" />
+          <img loading="lazy" alt="icon" src="./assets/quiz.svg" />
           My Library
         </li>
-          <img alt="icon" src="assets/Vector 267.svg" style={{width:"100%",margin:"10px 0"}} />
+          <img loading="lazy" alt="icon" src="assets/Vector 267.svg" style={{width:"100%",margin:"10px 0"}} />
        
         <li className="list-item list-admin">    
           <span className="admin">Admin</span>
-          <img alt="icon" src="./assets/admin_meds.svg" />
+          <img loading="lazy" alt="icon" src="./assets/admin_meds.svg" />
           Round Status
         </li>
       </ul>

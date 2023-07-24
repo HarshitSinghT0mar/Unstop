@@ -34,7 +34,7 @@ const MainContent = () => {
               number="11"
             >
               <Stats smalltext="Total Candidate" number="11,145" />
-              <img src="./assets/Vector 250.svg" />
+              <img loading="lazy" src="./assets/Vector 250.svg" />
               <Stats smalltext="Who Attempted" number="1,114" />
             </Overview>
             <Overview
@@ -44,9 +44,9 @@ const MainContent = () => {
               smallText="Social Share"
             >
               <Stats smalltext="E-mail" number="11000" />
-              <img src="./assets/Vector 250.svg" />
+              <img loading="lazy" src="./assets/Vector 250.svg" />
               <Stats smalltext="Social Share" number="145" />
-              <img src="./assets/Vector 250.svg" />
+              <img loading="lazy" src="./assets/Vector 250.svg" />
               <Stats smalltext="Unique Link" number="145" />
             </Overview>
 

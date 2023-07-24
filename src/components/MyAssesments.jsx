@@ -17,9 +17,9 @@ const MyAssesments = (props) => {
           <div className="my-assesment-img-container">
             {" "}
             {/*all these icons will render on smaller screen*/}
-            <img alt="icon" src="assets/search.svg" />
-            <img alt="icon" src="assets/filter_list_alt.svg" />
-            <img alt="icon" src="assets/bar_chart.svg" onClick={showBarChart} />
+            <img loading="lazy" alt="icon" src="assets/search.svg" />
+            <img loading="lazy" alt="icon" src="assets/filter_list_alt.svg" />
+            <img loading="lazy" alt="icon" src="assets/bar_chart.svg" onClick={showBarChart} />
           </div>
         )}
       </div>
@@ -32,7 +32,7 @@ const MyAssesments = (props) => {
             setShowForm(!showForm);
           }}
         >
-          <img alt="icon" src="./assets/add.svg" />
+          <img loading="lazy" alt="icon" src="./assets/add.svg" />
           <span>New Assesment</span>
           <p>
             From here you can add questions of multiple types like MCQs,

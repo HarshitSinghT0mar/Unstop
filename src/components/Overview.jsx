@@ -5,7 +5,7 @@ const Overview = (props) => {
     <div className="common-box">
       <p>{props.heading}</p>
       <div className="inside-box">
-        <img alt="icon" src={props.icon} className="icon-images" />
+        <img loading="lazy" alt="icon" src={props.icon} className="icon-images" />
         {props.children}
         {/* Stats component will be accessed here as it is wrapped inside overview component in MainContent   */}
       </div>
