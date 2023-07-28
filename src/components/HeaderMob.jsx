@@ -16,13 +16,13 @@ const HeaderMob = (props) => {
       <div className="mob-nav">
         <img loading="lazy" src="./assets/segment.svg" onClick={showNavMob} />
         <span>Assesment</span>
-        <img
+        {/* <img
           loading="lazy"
           alt="laptopIcon"
           src="./assets/laptop_mac.svg"
           id="laptop-screen"
           onClick={() => toggleScreenSize()}
-        />
+        /> */}
       </div>
       <div className="mob-page-nav">
         <a href="#" className="page-nav-link-active">

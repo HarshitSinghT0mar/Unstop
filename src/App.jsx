@@ -13,17 +13,7 @@ function App() {
   const [showChart, setShowChart] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const toggleScreenSize = () => {
-    setIsMobile(!isMobile);
-  };
-  useEffect(
-    () => {
-      const desktopWidth = !isMobile && window.innerWidth;
-
-      isMobile ? setScreenWidth(766) : setScreenWidth(desktopWidth);
-    }, //using useEffect so that screenWidth changes only after the setMobile is executes and isMobile is changed
-    [isMobile]
-  );
+  
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -51,10 +41,10 @@ function App() {
         setScreenWidth,
         showChart,
         setShowChart,
-        toggleScreenSize,
+       
       }}
     >
-    <div className={isMobile?"mobile":"desktop"}>
+   
       <div className="app-container">
         {(showNav || screenWidth > 767) && (
           <>
@@ -66,7 +56,7 @@ function App() {
         <MainContent />
 
         <CSSTransition /*levaraging react transition library to apply slide up transition to Form*/
-          in={showForm}
+          in={showForm||showNav}
           timeout={300}
           classNames="fade-in"
           unmountOnExit
@@ -83,7 +73,7 @@ function App() {
           <AssessmentForm />
         </CSSTransition>
       </div>
-      </div>
+      
     </FormContext.Provider>
   );
 }

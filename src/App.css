@@ -272,10 +272,6 @@ body {
   display: flex;
   gap: 4px;
 }
-.my-assesment-img-container img {
-  padding: 4px;
-  border-radius: 50px;
-}
 
 .assesment-cards {
   display: flex;
@@ -646,13 +642,3 @@ body {
   }
 }
 
-.desktop {
-  width: 100%; 
-
-}
-
-.mobile {
-  margin: auto;
-  max-width: 400px;
-
-}

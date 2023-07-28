@@ -16,7 +16,7 @@ const PageNav = (props) => {
         <a href="#" className="page-nav-link-active">
           My Assesments
         </a>
-      <img loading="lazy" src='assets/mobile_screen_share.svg' id="mobile-screen" onClick={()=>toggleScreenSize()}/>      
+      {/* <img loading="lazy" src='assets/mobile_screen_share.svg' id="mobile-screen" />       */}
       </section>
       
   )
