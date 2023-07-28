@@ -55,11 +55,10 @@ body {
   font-weight: var(--fw-primary);
   color: var(--clr-text-primary);
   line-height: normal;
+ 
 }
 
-.small-screen {
-  max-width: 600px;
-}
+
 
 .app-container {
   display: flex;
@@ -67,6 +66,7 @@ body {
   min-width: 100%;
   height: auto;
   position: relative;
+
 }
 
 .nav-container {
@@ -263,7 +263,18 @@ body {
   gap: 16px;
 }
 .my-assesment-header {
-  font-size: var(--fs-large);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-assesment-img-container {
+  display: flex;
+  gap: 4px;
+}
+.my-assesment-img-container img {
+  padding: 4px;
+  border-radius: 50px;
 }
 
 .assesment-cards {
@@ -499,6 +510,7 @@ body {
   height: 100%;
 }
 
+
 .slide-up-enter {
   transform: translateY(100%);  /*will move upwards 100%*/
 }
@@ -537,7 +549,7 @@ body {
 
 /*media queries are used to modify the style for smaller screens*/
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 766px) {
   .nav-container {
     z-index: 5;
     padding: 40px 20px 10px 20px;
@@ -570,6 +582,7 @@ body {
   .slid-in {
     height: 100%;
   }
+  
 
   .list-item {
     min-width: 100%;
@@ -631,4 +644,15 @@ body {
     z-index: 6;
     background: var(--clr-bg-white);
   }
+}
+
+.desktop {
+  width: 100%; 
+
+}
+
+.mobile {
+  margin: auto;
+  max-width: 400px;
+
 }

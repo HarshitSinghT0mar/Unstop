@@ -51,7 +51,7 @@ const AssesmentDetails = (props) => {
               <img loading="lazy" src="./assets/pink_LP.svg" alt="user" />
             
             </div>
-           {screenWidth<767 && <span>+324</span>}</>
+           {screenWidth<=767 && <span>+324</span>}</>
           ) : (
             <img loading="lazy" src="assets/User_LP.svg" />
           )}

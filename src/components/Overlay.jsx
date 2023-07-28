@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import FormContext from "../Contexts/FormContext";
 
 const Overlay = () => {
+  const {screenWidth}=useContext(FormContext)
+  
   return <div className="overlay-box"></div>;
 };
 

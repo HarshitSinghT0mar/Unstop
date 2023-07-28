@@ -1,8 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext} from 'react'
+import FormContext from '../Contexts/FormContext'
 
 
 
 const PageNav = (props) => {
+  const {toggleScreenSize}=useContext(FormContext)
 
   return (
     <section className="page-nav">
@@ -14,7 +16,7 @@ const PageNav = (props) => {
         <a href="#" className="page-nav-link-active">
           My Assesments
         </a>
-      <img loading="lazy" src='assets/mobile_screen_share.svg' id="mobile-screen"/>      
+      <img loading="lazy" src='assets/mobile_screen_share.svg' id="mobile-screen" onClick={()=>toggleScreenSize()}/>      
       </section>
       
   )

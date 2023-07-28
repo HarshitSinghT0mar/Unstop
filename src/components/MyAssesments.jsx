@@ -13,9 +13,9 @@ const MyAssesments = (props) => {
     <section className="my-assesments">
       <div className="my-assesment-header">
         <span>My Assesment</span>
-        {screenWidth < 767 && (
+        {screenWidth <=767 && (
           <div className="my-assesment-img-container">
-            {" "}
+          
             {/*all these icons will render on smaller screen*/}
             <img loading="lazy" alt="icon" src="assets/search.svg" />
             <img loading="lazy" alt="icon" src="assets/filter_list_alt.svg" />
@@ -55,8 +55,24 @@ const MyAssesments = (props) => {
           date="20 Apr 2023"
           purpose="Job"
         />
-        {screenWidth < 767 && (
+        {screenWidth <= 767 && (
           <>
+            <AssesmentDetails
+              bool={true}
+              subject="Maths"
+              hrs="00"
+              noOfQues="00"
+              date="20 Apr 2023"
+              purpose="Job"
+            />
+            <AssesmentDetails
+              bool={true}
+              subject="Maths"
+              hrs="00"
+              noOfQues="00"
+              date="20 Apr 2023"
+              purpose="Job"
+            />
             <AssesmentDetails
               bool={true}
               subject="Maths"
