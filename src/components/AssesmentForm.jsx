@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { useAppData } from "../Contexts/AppContext";
+import { Javascript } from "@mui/icons-material";
 
 //not storinf form data for now due to time constraints, will try updating on github using this form's data and redering assesment details through mapping
 
@@ -8,7 +9,7 @@ const AssessmentForm = () => {
   const [name, setName] = useState("");
   const [purpose, setPurpose] = useState("");
   const [description, setDescription] = useState("");
-  const [selectedSkills, setSelectedSkills] = useState([]);
+  const [selectedSkills, setSelectedSkills] = useState(["JavaScript","React.js","HTML5","CSS"]);
   const [duration, setDuration] = useState("");
 
   const { showForm, setShowForm } = useAppData();
@@ -75,11 +76,14 @@ const AssessmentForm = () => {
         </div>
         <form className="form-section">
           <label className="label-section">Skills</label>
+          <div className="skills-container">
           {selectedSkills.map((skill) => (
-            <div key={skill}>                 {/*key is important to let react identifitem uniquely*/}
-              {skill} <span onClick={() => handleRemoveSkill(skill)}><CloseIcon /></span>
+            <div className="skills" key={skill}>                 {/*key is important to let react identifitem uniquely*/}
+              {skill} <span onClick={() => handleRemoveSkill(skill)}><CloseIcon sx={{fontSize: "15px",cursor: "pointer"}}/></span>
+              
             </div>
           ))}
+            </div>
           <input
             type="text"
             placeholder="Add Skill"
