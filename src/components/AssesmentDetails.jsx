@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import FormContext from "../Contexts/FormContext";
+import React from "react";
+import { useAppData } from "../Contexts/AppContext";
 
 const AssesmentDetails = (props) => {
-  const { screenWidth } = useContext(FormContext);
+  const { screenWidth } = useAppData();
   return (
     <div className="subject-assesment">
       <div className="subject-box-1">
@@ -43,7 +43,7 @@ const AssesmentDetails = (props) => {
             <span>Share</span>
           </div>
 
-          {props.bool ? (  //using bool prop to conditionally rendet the images of users accounts
+          {props.bool ? (  //using bool prop to conditionally render the images of users accounts
             <>
             <div className="image-container">
               <img loading="lazy" src="./assets/User_LP.svg" alt="user" />

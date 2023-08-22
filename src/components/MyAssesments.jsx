@@ -1,25 +1,36 @@
-import React, { useContext } from "react";
+import React, { useRef } from "react";
 import AssesmentDetails from "./AssesmentDetails";
-import FormContext from "../Contexts/FormContext";
+import { useAppData } from "../Contexts/AppContext";
 
 const MyAssesments = (props) => {
   const { screenWidth, setShowChart, showChart, setShowForm, showForm } =
-    useContext(FormContext);
+    useAppData();
+  const myRef = useRef();
 
   const showBarChart = () => {
-    return setShowChart(!showChart);   /*will show and close bar char*/
+   
+    myRef.current.classList.toggle("active");
+
+    return setShowChart(!showChart); /*will show and close bar char*/
   };
   return (
     <section className="my-assesments">
       <div className="my-assesment-header">
         <span>My Assesment</span>
-        {screenWidth <=767 && (
+        {screenWidth <= 767 && (
           <div className="my-assesment-img-container">
-          
             {/*all these icons will render on smaller screen*/}
             <img loading="lazy" alt="icon" src="assets/search.svg" />
             <img loading="lazy" alt="icon" src="assets/filter_list_alt.svg" />
-            <img loading="lazy" alt="icon" src="assets/bar_chart.svg" onClick={showBarChart} />
+            <div className="barchart-img" ref={myRef}>
+              <img
+                loading="lazy"
+                alt="icon"
+                
+                src="assets/bar_chart.svg"
+                onClick={showBarChart}
+              />
+            </div>
           </div>
         )}
       </div>

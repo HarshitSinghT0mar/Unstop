@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import FormContext from "../Contexts/FormContext";
+import { useAppData } from "../Contexts/AppContext";
 
 //not storinf form data for now due to time constraints, will try updating on github using this form's data and redering assesment details through mapping
 
@@ -11,7 +11,7 @@ const AssessmentForm = () => {
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [duration, setDuration] = useState("");
 
-  const { showForm, setShowForm } = useContext(FormContext);
+  const { showForm, setShowForm } = useAppData();
 
   const handleAddSkill = (skill) => {
     setSelectedSkills([...selectedSkills, skill]);

@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
-import FormContext from "../Contexts/FormContext";
+import React from "react";
+import {useAppData } from "../Contexts/AppContext.jsx";
 
 const Navbar = () => {
-  const { showNav, setShowNav } = useContext(FormContext);
+  const { showNav, setShowNav } = useAppData();
+  // console.log(showNav);
   return (
     <nav className="nav-container">
       <ul style={{ textAlign:"center",width:"100%"}}>

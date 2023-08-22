@@ -55,10 +55,7 @@ body {
   font-weight: var(--fw-primary);
   color: var(--clr-text-primary);
   line-height: normal;
- 
 }
-
-
 
 .app-container {
   display: flex;
@@ -66,7 +63,6 @@ body {
   min-width: 100%;
   height: auto;
   position: relative;
-
 }
 
 .nav-container {
@@ -123,12 +119,13 @@ body {
   flex: 1 0;
   color: var(--clr-text-primary);
   height: auto;
+  width: 100%;
 }
 .main-content {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  width: 100%;
+  max-width: 100%;
   height: 100vh;
   gap: 20px;
   flex: 1 0;
@@ -305,8 +302,8 @@ body {
 }
 .subject-assesment {
   display: flex;
-  flex-direction: column;
   flex: 1;
+  flex-direction: column;
   padding: 16px;
   gap: 16px;
   border: 1px solid rgba(218, 220, 224, 1);
@@ -320,6 +317,7 @@ body {
   align-items: center;
   align-items: flex-start;
   gap: 10px;
+  max-width: 100%;
 }
 
 .subject-calendar {
@@ -339,11 +337,15 @@ body {
 .subject-footer {
   display: flex;
   justify-content: space-between;
+  max-width: 100%;
 }
 
 .ques-duration {
   display: flex;
+  flex: 1;
   gap: 14px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .ques-duration p {
@@ -359,18 +361,25 @@ body {
   display: flex;
   gap: 10px;
   font-size: var(--fs-medium);
-
+  flex: 1;
   align-items: center;
+
+  justify-content: flex-end;
 }
 
 .share-image {
   display: flex;
   border: 1px solid var(--clr-text-primary);
+
   border-radius: 50px;
   padding: 2px 8px 2px 6px;
   align-items: center;
   gap: 4px;
   justify-content: center;
+}
+.share-image img {
+  max-width: 30px;
+  height: auto;
 }
 
 .image-container {
@@ -410,7 +419,7 @@ body {
 }
 
 .form {
-  z-index: 6;
+  z-index: 14;
   background: var(--clr-bg-white);
   position: absolute;
   width: 44%;
@@ -425,8 +434,6 @@ body {
   gap: 20px;
   padding: 20px 30px;
 }
-
-
 
 .form-header {
   display: flex;
@@ -448,7 +455,6 @@ body {
   font-size: 16px;
   font-weight: 600;
   flex-wrap: wrap;
-
 }
 .label-section {
   font-size: var(--fs-medium2-16);
@@ -501,14 +507,13 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 4;
+  z-index: 12;
   width: 100%;
   height: 100%;
 }
 
-
 .slide-up-enter {
-  transform: translateY(100%);  /*will move upwards 100%*/
+  transform: translateY(100%); /*will move upwards 100%*/
 }
 
 .slide-up-enter-active {
@@ -578,7 +583,6 @@ body {
   .slid-in {
     height: 100%;
   }
-  
 
   .list-item {
     min-width: 100%;
@@ -598,12 +602,24 @@ body {
 
   .my-assesment-img-container {
     display: flex;
-    gap: 4px;
+    gap: 10px;
   }
   .my-assesment-img-container img {
-    padding: 4px;
-    border-radius: 50px;
+    object-fit: contain;
   }
+
+  .active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid hsla(210, 100%, 45%, 1);
+    background:  rgb(195, 221, 248);
+
+  }
+
 
   .common-box {
     max-width: 100%;
@@ -622,11 +638,18 @@ body {
     order: 4;
     border-radius: 0 0 12px 12px;
   }
-.subject-assesment{
-  font-size: var(--fs-medium);
-  width: 100%;
-}
+  .subject-assesment {
+    font-size: var(--fs-medium);
+    width: 100%;
+  }
+  .new-assesment {
+    min-width: 100%;
+  }
 
+  .share-image {
+    display: flex;
+    justify-content: space-around;
+  }
 
   .form {
     position: absolute;
@@ -637,8 +660,27 @@ body {
     top: 0;
     min-width: 100%;
     height: 100vh;
-    z-index: 6;
+    z-index: 14;
     background: var(--clr-bg-white);
   }
-}
 
+  .share-image {
+    font-size: 80%;
+  }
+  .share-image img {
+    object-fit: contain;
+    width: 40%;
+    height: 40%;
+  }
+  .share-user span {
+    font-size: 90%;
+  }
+
+  .ques-duration {
+    max-width: 50%;
+  }
+
+  .overlay-box {
+    z-index: 6;
+  }
+}

@@ -1,14 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import Overview from "./Overview";
 import Stats from "./Stats";
 import MyAssesments from "./MyAssesments";
 import PageNav from "./PageNav";
 import HeaderMob from "./HeaderMob";
-import FormContext from "../Contexts/FormContext";   //FormCOntext is the context created to levarage context api
+import { useAppData } from "../Contexts/AppContext";   
 
 const MainContent = () => {
-  const { screenWidth, showChart } = useContext(FormContext);  //accessing variable of other components using useContext hook.
-
+  const { screenWidth, showChart } = useAppData(); 
   return (
     <main className="main-content-container">
       {screenWidth > 767 ? (

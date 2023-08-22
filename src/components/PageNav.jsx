@@ -1,10 +1,10 @@
 import React, { useContext} from 'react'
-import FormContext from '../Contexts/FormContext'
+import FormContext from '../Contexts/AppContext'
 
 
 
 const PageNav = (props) => {
-  const {toggleScreenSize}=useContext(FormContext)
+
 
   return (
     <section className="page-nav">

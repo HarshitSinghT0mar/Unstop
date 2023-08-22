@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import FormContext from "../Contexts/FormContext";
+import React from "react";
+import { useAppData } from "../Contexts/AppContext";
 
 const HeaderMob = (props) => {
-  const { showNav, setShowNav ,toggleScreenSize} = useContext(FormContext);
+  const { showNav, setShowNav} = useAppData();
 
   const showNavMob = () => {
     return setShowNav(!showNav);
