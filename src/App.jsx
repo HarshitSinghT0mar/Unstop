@@ -44,7 +44,7 @@ function App() {
       <MainContent />
 
       <CSSTransition /*levaraging react transition library to apply slide up transition to Form*/
-        in={showForm}
+        in={showForm||showNav}
         timeout={500}
         classNames="fade-in"
         unmountOnExit
