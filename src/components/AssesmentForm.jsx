@@ -78,7 +78,8 @@ const AssessmentForm = () => {
           <label className="label-section">Skills</label>
           <div className="skills-container">
           {selectedSkills.map((skill) => (
-            <div className="skills" key={skill}>                 {/*key is important to let react identifitem uniquely*/}
+            // key is important to let react identifitem uniquely
+            <div className="skills" key={skill}>        
               {skill} <span onClick={() => handleRemoveSkill(skill)}><CloseIcon sx={{fontSize: "15px",cursor: "pointer"}}/></span>
               
             </div>

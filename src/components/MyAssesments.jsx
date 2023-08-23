@@ -9,7 +9,7 @@ const MyAssesments = (props) => {
 
   const showBarChart = () => {
    
-    myRef.current.classList.toggle("active");
+    myRef.current.classList.toggle("chart-active");
 
     return setShowChart(!showChart); /*will show and close bar char*/
   };
@@ -28,6 +28,7 @@ const MyAssesments = (props) => {
                 alt="icon"
                 
                 src="assets/bar_chart.svg"
+
                 onClick={showBarChart}
               />
             </div>
